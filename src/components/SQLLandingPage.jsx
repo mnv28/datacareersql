@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import DataCareerLogo from "../assets/DataCareerLogo.png";
 
 const categories = [
@@ -84,16 +83,16 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <a href="/" className="flex items-center">
           <img src={DataCareerLogo} alt="DataCareer" className="h-8 w-auto" />
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-gray-700">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.id}
-              to={`#${item.id}`}
+              href={`#${item.id}`}
               onClick={(e) => {
                 e.preventDefault();
                 scrollTo(item.id);
@@ -101,7 +100,7 @@ function Nav() {
               className="text-sm hover:text-blue-600 transition-colors cursor-pointer"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -132,9 +131,9 @@ function Nav() {
         <div className="md:hidden bg-white border-t border-gray-200 min-h-screen">
           <div className="px-4 py-4 space-y-4">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.id}
-                to={`#${item.id}`}
+                href={`#${item.id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   scrollTo(item.id);
@@ -142,7 +141,7 @@ function Nav() {
                 className="block w-full text-left text-sm text-gray-700 py-2 hover:text-blue-600"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
             <div className="pt-4 space-y-3">
               <a href={registrationUrl} className="block w-full text-center px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg">
