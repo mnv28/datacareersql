@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DataCareerLogo from "../assets/DataCareerLogo.png";
+import { Link } from "react-router-dom";
 
 const categories = [
   { label: "Card usage", tag: "Banking", bg: "#ffc8aa", text: "#662400" },
@@ -83,8 +84,8 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a 
-          href="/" 
+        <Link
+          to="/" 
           className="flex items-center"
           onClick={(e) => {
             e.preventDefault();
@@ -92,14 +93,14 @@ function Nav() {
           }}
         >
           <img src={DataCareerLogo} alt="DataCareer" className="h-8 w-auto" />
-        </a>
+          </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-gray-700">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={`#${item.id}`}
+                to={`#${item.id}`}
               onClick={(e) => {
                 e.preventDefault();
                 scrollTo(item.id);
@@ -107,18 +108,18 @@ function Nav() {
               className="text-sm hover:text-blue-600 transition-colors cursor-pointer"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a href={registrationUrl} className="px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
+          <Link to={registrationUrl} className="px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
             Explore
-          </a>
-          <a href={registrationUrl} className="px-4 py-2 text-sm text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition">
+          </Link>
+          <Link to={registrationUrl} className="px-4 py-2 text-sm text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition">
             Start Free
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -138,9 +139,9 @@ function Nav() {
         <div className="md:hidden bg-white border-t border-gray-200 min-h-screen">
           <div className="px-4 py-4 space-y-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.id}
-                href={`#${item.id}`}
+                to={`#${item.id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   scrollTo(item.id);
@@ -148,15 +149,15 @@ function Nav() {
                 className="block w-full text-left text-sm text-gray-700 py-2 hover:text-blue-600"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <div className="pt-4 space-y-3">
-              <a href={registrationUrl} className="block w-full text-center px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg">
+                <Link to={registrationUrl} className="block w-full text-center px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg">
                 Explore Challenges
-              </a>
-              <a href={registrationUrl} className="block w-full text-center px-4 py-2 text-sm text-white bg-orange-500 rounded-lg">
+              </Link>
+              <Link to={registrationUrl} className="block w-full text-center px-4 py-2 text-sm text-white bg-orange-500 rounded-lg">
                 Start Free
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -178,9 +179,9 @@ function Hero() {
           Learn SQL through real-world simulations and stand out in the job market.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={registrationUrl} className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
+          <Link to={registrationUrl} className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
             Start Learning Free
-          </a>
+          </Link>
           <button 
             onClick={() => document.getElementById('simulations')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white/10 transition"
@@ -284,9 +285,9 @@ function Domains() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.map((category, index) => (
-          <a
+          <Link
             key={index}
-            href={registrationUrl}
+            to={registrationUrl}
             className="block p-6 rounded-lg hover:shadow-md transition"
             style={{ backgroundColor: category.bg, color: category.text }}
           >
@@ -295,7 +296,7 @@ function Domains() {
             </span>
             <h3 className="font-semibold mt-3">{category.label}</h3>
             <p className="text-sm opacity-80 mt-2">View challenge →</p>
-          </a>
+          </Link>
         ))}
       </div>
     </Section>
@@ -330,9 +331,9 @@ function HowItWorks() {
         ))}
       </div>
       <div className="text-center">
-        <a href={registrationUrl} className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
+        <Link to={registrationUrl} className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
           Start Learning
-        </a>
+        </Link>  
       </div>
     </Section>
   );
@@ -344,12 +345,12 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center flex flex-col justify-between items-center sm:flex-row">
         <p className="text-sm">© {new Date().getFullYear()} DataCareer. All rights reserved.</p>
         <div className="flex justify-center space-x-6 text-sm mt-4 sm:mt-0">
-          <a href="#" className="hover:text-blue-300">Privacy</a>
-          <a href="#" className="hover:text-blue-300">Terms</a>
-          <a href="#" className="hover:text-blue-300">Contact</a>
-        </div>
+          <Link to="#" className="hover:text-blue-300">Privacy</Link>
+          <Link to="#" className="hover:text-blue-300">Terms</Link>
+          <Link to="#" className="hover:text-blue-300">Contact</Link>
+        </div>  
       </div>
-    </footer>
+    </footer> 
   );
 }
 

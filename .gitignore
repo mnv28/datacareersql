@@ -31,8 +31,3 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
-
-# Optional: lock files if you don’t want to commit them
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
