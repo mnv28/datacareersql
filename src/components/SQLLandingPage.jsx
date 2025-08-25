@@ -63,14 +63,12 @@ function Nav() {
   const registrationUrl = import.meta.env.VITE_REGISTRATION_URL;
 
   const scrollTo = (id) => {
-    console.log('Scrolling to:', id);
     const element = document.getElementById(id);
     if (element) {
-      console.log('Element found, scrolling...');
       element.scrollIntoView({ behavior: 'smooth' });
       setIsOpen(false);
     } else {
-      console.log('Element not found with ID:', id);
+      console.error(`Element not found with ID: ${id}`);
     }
   };
 
