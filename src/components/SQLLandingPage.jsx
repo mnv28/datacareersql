@@ -345,7 +345,6 @@ function Footer() {
         <div className="flex justify-center space-x-6 text-sm mt-4 sm:mt-0">
           <Link to="#" className="hover:text-blue-300">Privacy</Link>
           <Link to="#" className="hover:text-blue-300">Terms</Link>
-          <Link to="#" className="hover:text-blue-300">Contact</Link>
         </div>  
       </div>
     </footer> 
