@@ -1,12 +1,16 @@
-
+// App.jsx
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
 import SQLLandingPage from './components/SQLLandingPage'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
-
   return (
     <>
-      <SQLLandingPage />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<SQLLandingPage />} />
+      </Routes>
     </>
   )
 }

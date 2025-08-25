@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DataCareerLogo from "../assets/DataCareerLogo.png";
 
 const categories = [
@@ -83,7 +83,14 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center">
+        <a 
+          href="/" 
+          className="flex items-center"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           <img src={DataCareerLogo} alt="DataCareer" className="h-8 w-auto" />
         </a>
 
@@ -345,6 +352,7 @@ function Footer() {
     </footer>
   );
 }
+
 
 function SQLLandingPage() {
   return (
