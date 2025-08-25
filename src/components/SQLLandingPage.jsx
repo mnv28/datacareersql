@@ -340,10 +340,10 @@ function HowItWorks() {
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <footer className="bg-gray-900 text-white py-12 ">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center flex flex-col justify-between items-center sm:flex-row">
         <p className="text-sm">© {new Date().getFullYear()} DataCareer. All rights reserved.</p>
-        <div className="flex justify-center space-x-6 mt-4 text-sm">
+        <div className="flex justify-center space-x-6 text-sm mt-4 sm:mt-0">
           <a href="#" className="hover:text-blue-300">Privacy</a>
           <a href="#" className="hover:text-blue-300">Terms</a>
           <a href="#" className="hover:text-blue-300">Contact</a>
