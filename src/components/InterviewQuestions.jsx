@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Section from "./Section";
 import BHPLogo from "../assets/BHP Group.png";
 import TelstraLogo from "../assets/Telstra.png";
 import WoolworthsLogo from "../assets/Woolworths.png";
 import CommBankLogo from "../assets/CommBank.png";
-import { REGISTRATION_URL } from "../api";
 
 function InterviewQuestions() {
   const questions = [
@@ -130,7 +128,6 @@ function InterviewQuestions() {
               <tr 
                 key={index} 
                 className="hover:bg-gray-50 transition-colors cursor-pointer"
-                onClick={() => window.open(REGISTRATION_URL, '_blank')}
               >
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
@@ -165,8 +162,7 @@ function InterviewQuestions() {
         {questions.map((question, index) => (
           <div 
             key={index}
-            className="bg-white rounded-lg shadow-md p-4 border border-gray-200 cursor-pointer hover:shadow-lg transition-shadow"
-            onClick={() => window.open(REGISTRATION_URL, '_blank')}
+            className="bg-white rounded-lg shadow-md p-4 border border-gray-200 cursor-pointer hover:shadow-lg transition-shadow" 
           >
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center">
@@ -188,15 +184,6 @@ function InterviewQuestions() {
             </h3>
           </div>
         ))}
-      </div>
-      
-      <div className="text-center mt-8">
-        <Link 
-          to={REGISTRATION_URL} 
-          className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
-        >
-          Start Practicing
-        </Link>
       </div>
     </Section>
   );
