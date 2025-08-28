@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import DataCareerLogo from "../assets/DataCareerLogo.png";
+import BHPLogo from "../assets/BHP Group.png";
+import TelstraLogo from "../assets/Telstra.png";
+import WoolworthsLogo from "../assets/Woolworths.png";
+import CommBankLogo from "../assets/CommBank.png";
 import { Link } from "react-router-dom";
 
 const categories = [
@@ -223,11 +227,177 @@ function WhySQL() {
   );
 }
 
-function Domains() {
+function InterviewQuestions() {
+  const questions = [
+    {
+      company: "Woolworths",
+      logo: WoolworthsLogo,
+      title: "Redeemed point distribution",
+      difficulty: "EASY",
+      difficultyColor: "bg-green-100 text-green-800"
+    },
+    {
+      company: "Woolworths",
+      logo: WoolworthsLogo,
+      title: "Top and bottom stores",
+      difficulty: "EASY",
+      difficultyColor: "bg-green-100 text-green-800"
+    },
+    {
+      company: "Woolworths",
+      logo: WoolworthsLogo,
+      title: "Loyalty usage over time",
+      difficulty: "DIFFICULT",
+      difficultyColor: "bg-red-100 text-red-800"
+    },
+    {
+      company: "CommBank",
+      logo: CommBankLogo,
+      title: "Weekend vs weekday spenders",
+      difficulty: "EASY",
+      difficultyColor: "bg-green-100 text-green-800"
+    },
+    {
+      company: "CommBank",
+      logo: CommBankLogo,
+      title: "Aged-based financial behaviour",
+      difficulty: "MODERATE",
+      difficultyColor: "bg-yellow-100 text-yellow-800"
+    },
+    {
+      company: "CommBank",
+      logo: CommBankLogo,
+      title: "Account dormancy risk score",
+      difficulty: "DIFFICULT",
+      difficultyColor: "bg-red-100 text-red-800"
+    },
+    {
+      company: "Telstra",
+      logo: TelstraLogo,
+      title: "High traffic assets",
+      difficulty: "EASY",
+      difficultyColor: "bg-green-100 text-green-800"
+    },
+    {
+      company: "Telstra",
+      logo: TelstraLogo,
+      title: "Highly congested asset ids",
+      difficulty: "MODERATE",
+      difficultyColor: "bg-yellow-100 text-yellow-800"
+    },
+    {
+      company: "Telstra",
+      logo: TelstraLogo,
+      title: "Latency and packet loss correlation",
+      difficulty: "DIFFICULT",
+      difficultyColor: "bg-red-100 text-red-800"
+    },
+    {
+      company: "BHP Group",
+      logo: BHPLogo,
+      title: "High compliance mining employees",
+      difficulty: "EASY",
+      difficultyColor: "bg-green-100 text-green-800"
+    },
+    {
+      company: "BHP Group",
+      logo: BHPLogo,
+      title: "Top performing employees",
+      difficulty: "MODERATE",
+      difficultyColor: "bg-yellow-100 text-yellow-800"
+    },
+    {
+      company: "BHP Group",
+      logo: BHPLogo,
+      title: "Do safety trainings work?",
+      difficulty: "DIFFICULT",
+      difficultyColor: "bg-red-100 text-red-800"
+    }
+  ];
+
   const registrationUrl = import.meta.env.VITE_REGISTRATION_URL;
 
   return (
     <Section id="simulations" className="bg-white">
+      <div className="text-center mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          Ace the SQL & Data Science Interview
+        </h2>
+        <p className="text-lg text-gray-600 mb-2">
+          Practice SQL Interview and Data Science Interview questions on DataCareer.
+        </p>
+        <p className="text-sm text-gray-500">
+          Made by DataCareer Team, Best-Selling Author of Ace the Data Science Interview.
+        </p>
+      </div>
+      
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse bg-white rounded-lg shadow-lg overflow-hidden">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Company
+              </th>
+              <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Title
+              </th>
+              <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Difficulty
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {questions.map((question, index) => (
+              <tr 
+                key={index} 
+                className="hover:bg-gray-50 transition-colors cursor-pointer"
+                onClick={() => window.open(registrationUrl, '_blank')}
+              >
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    <img 
+                      src={question.logo} 
+                      alt={question.company} 
+                      className="h-8 w-8 rounded-full mr-3"
+                    />
+                    <span className="text-sm font-medium text-gray-900">
+                      {question.company}
+                    </span>
+                  </div>
+                </td>
+                <td className="px-6 py-4">
+                  <span className="text-sm text-gray-900">
+                    {question.title}
+                  </span>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${question.difficultyColor}`}>
+                    {question.difficulty}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <div className="text-center mt-8">
+        <Link 
+          to={registrationUrl} 
+          className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+        >
+          Start Practicing
+        </Link>
+      </div>
+    </Section>
+  );
+}
+
+function Domains() {
+  const registrationUrl = import.meta.env.VITE_REGISTRATION_URL;
+
+  return (
+    <Section id="domains" className="bg-gray-50">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           Real-World Challenges
@@ -311,6 +481,7 @@ function SQLLandingPage() {
       <main>
         <Hero />
         <WhySQL />
+        <InterviewQuestions />
         <Domains />
         <HowItWorks />
       </main>
