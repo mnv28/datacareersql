@@ -10,7 +10,7 @@ function WhySQL() {
   ];
 
   return (
-    <Section id="why-sql" className="bg-white">
+    <Section id="why-sql" className="bg-gray-50">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           Why Learn SQL?
@@ -21,7 +21,7 @@ function WhySQL() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card, index) => (
-          <div key={index} className="text-center p-6 bg-gray-50 rounded-lg">
+          <div key={index} className="text-center p-6 bg-white rounded-lg shadow-sm">
             <div className="text-2xl mb-4">{card.icon}</div>
             <h3 className="font-semibold text-gray-900 mb-2">{card.title}</h3>
             <p className="text-gray-600 text-sm">{card.desc}</p>
