@@ -8,19 +8,15 @@ import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
 
 function SQLLandingPage() {
-  // Handle scroll to top on page load for production environments
   useEffect(() => {
-    // Force scroll to top on component mount (helps with production builds)
     const forceScrollToTop = () => {
       try {
-        // Use smooth scrolling instead of instant scrolling
         window.scrollTo({ 
           top: 0, 
           left: 0,
           behavior: 'smooth'
         });
       } catch (error) {
-        // Fallback to instant scroll if smooth scroll fails
         try {
           if (window.scrollTo) {
             window.scrollTo(0, 0);
@@ -35,13 +31,10 @@ function SQLLandingPage() {
       }
     };
 
-    // Execute immediately with smooth scroll
     forceScrollToTop();
 
-    // Also try after a small delay to handle any rendering delays
     const timer = setTimeout(forceScrollToTop, 100);
 
-    // Cleanup
     return () => clearTimeout(timer);
   }, []);
 
