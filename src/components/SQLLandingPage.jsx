@@ -21,38 +21,6 @@ const categories = [
   { label: "Sales forecasts", tag: "Sales", bg: "#bfe1f6", text: "#082436" },
 ];
 
-const levels = [
-  {
-    name: "Novice",
-    color: "from-blue-800 to-blue-400",
-    bullets: ["SELECT", "FROM", "DISTINCT", "ORDER"],
-    example: `SELECT product_id FROM orders ORDER BY product_id;`,
-  },
-  {
-    name: "Basic",
-    color: "from-blue-700 to-blue-300",
-    bullets: ["WHERE", "JOIN", "GROUP BY", "HAVING"],
-    example: `SELECT country, COUNT(*) AS users FROM customers WHERE status = 'active' GROUP BY country;`,
-  },
-  {
-    name: "Intermediate",
-    color: "from-blue-600 to-blue-200",
-    bullets: ["Subqueries", "CTEs", "String Functions"],
-    example: `WITH recent_orders AS (SELECT * FROM orders WHERE date > NOW() - INTERVAL '30 days') SELECT customer_id, SUM(amount) FROM recent_orders GROUP BY customer_id;`,
-  },
-  {
-    name: "Advanced",
-    color: "from-blue-500 to-blue-100",
-    bullets: ["Window Functions", "Partition By", "Pivot"],
-    example: `SELECT date, AVG(amount) OVER(ORDER BY date ROWS 6 PRECEDING) AS avg_7d FROM sales;`,
-  },
-  {
-    name: "Expert",
-    color: "from-blue-900 to-blue-600",
-    bullets: ["Recursion", "Correlated Queries", "Cursors"],
-    example: `WITH RECURSIVE tree AS (SELECT id, name FROM employees WHERE manager_id IS NULL UNION ALL SELECT e.id, e.name FROM employees e JOIN tree t ON e.manager_id = t.id) SELECT * FROM tree;`,
-  },
-];
 
 function Section({ id, children, className = "" }) {
   return (
