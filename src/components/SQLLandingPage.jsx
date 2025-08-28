@@ -331,7 +331,8 @@ function InterviewQuestions() {
         </p>
       </div>
       
-      <div className="overflow-x-auto">
+      {/* Desktop Table View */}
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse bg-white rounded-lg shadow-lg overflow-hidden">
           <thead className="bg-gray-50">
             <tr>
@@ -379,6 +380,36 @@ function InterviewQuestions() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile Card View */}
+      <div className="md:hidden space-y-4">
+        {questions.map((question, index) => (
+          <div 
+            key={index}
+            className="bg-white rounded-lg shadow-md p-4 border border-gray-200 cursor-pointer hover:shadow-lg transition-shadow"
+            onClick={() => window.open(registrationUrl, '_blank')}
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center">
+                <img 
+                  src={question.logo} 
+                  alt={question.company} 
+                  className="h-10 w-10 rounded-full mr-3"
+                />
+                <span className="text-sm font-semibold text-gray-900">
+                  {question.company}
+                </span>
+              </div>
+              <span className={`inline-flex px-3 py-1 text-xs font-semibold rounded-full ${question.difficultyColor}`}>
+                {question.difficulty}
+              </span>
+            </div>
+            <h3 className="text-sm text-gray-700 font-medium">
+              {question.title}
+            </h3>
+          </div>
+        ))}
       </div>
       
       <div className="text-center mt-8">
