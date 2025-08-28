@@ -232,85 +232,85 @@ function InterviewQuestions() {
     {
       company: "Woolworths",
       logo: WoolworthsLogo,
-      title: "Redeemed point distribution",
-      difficulty: "EASY",
+      title: "Redeemed Points Analysis",
+      difficulty: "Beginner",
       difficultyColor: "bg-green-100 text-green-800"
     },
     {
       company: "Woolworths",
       logo: WoolworthsLogo,
-      title: "Top and bottom stores",
-      difficulty: "EASY",
+      title: "Best & Worst Performing Stores",
+      difficulty: "Beginner",
       difficultyColor: "bg-green-100 text-green-800"
     },
     {
       company: "Woolworths",
       logo: WoolworthsLogo,
-      title: "Loyalty usage over time",
-      difficulty: "DIFFICULT",
+      title: "Loyalty Trends Over Time",
+      difficulty: "Advanced",
       difficultyColor: "bg-red-100 text-red-800"
     },
     {
       company: "CommBank",
       logo: CommBankLogo,
-      title: "Weekend vs weekday spenders",
-      difficulty: "EASY",
+      title: "Weekend vs Weekday Spending Patterns",
+      difficulty: "Beginner",
       difficultyColor: "bg-green-100 text-green-800"
     },
     {
       company: "CommBank",
       logo: CommBankLogo,
-      title: "Aged-based financial behaviour",
-      difficulty: "MODERATE",
+      title: "Age-based Financial Behaviour",
+      difficulty: "Intermediate",
       difficultyColor: "bg-yellow-100 text-yellow-800"
     },
     {
       company: "CommBank",
       logo: CommBankLogo,
-      title: "Account dormancy risk score",
-      difficulty: "DIFFICULT",
+      title: "Account Dormancy Risk Assessment",
+      difficulty: "Advanced",
       difficultyColor: "bg-red-100 text-red-800"
     },
     {
       company: "Telstra",
       logo: TelstraLogo,
-      title: "High traffic assets",
-      difficulty: "EASY",
+      title: "High-Traffic Network Asset",
+      difficulty: "Beginner",
       difficultyColor: "bg-green-100 text-green-800"
     },
     {
       company: "Telstra",
       logo: TelstraLogo,
-      title: "Highly congested asset ids",
-      difficulty: "MODERATE",
+      title: "Highly Congested Network Assets",
+      difficulty: "Intermediate",
       difficultyColor: "bg-yellow-100 text-yellow-800"
     },
     {
       company: "Telstra",
       logo: TelstraLogo,
-      title: "Latency and packet loss correlation",
-      difficulty: "DIFFICULT",
+      title: "Latency vs Packet Loss Correlation",
+      difficulty: "Advanced",
       difficultyColor: "bg-red-100 text-red-800"
     },
     {
       company: "BHP Group",
       logo: BHPLogo,
-      title: "High compliance mining employees",
-      difficulty: "EASY",
+      title: "High-Compliance Mining Workforce",
+      difficulty: "Beginner",
       difficultyColor: "bg-green-100 text-green-800"
     },
     {
       company: "BHP Group",
       logo: BHPLogo,
-      title: "Top performing employees",
-      difficulty: "MODERATE",
+      title: "Top Performing Employees",
+      difficulty: "Intermediate",
       difficultyColor: "bg-yellow-100 text-yellow-800"
     },
     {
       company: "BHP Group",
       logo: BHPLogo,
-      title: "Do safety trainings work?",
-      difficulty: "DIFFICULT",
+      title: "Effectiveness of Safety Training",
+      difficulty: "Advanced",
       difficultyColor: "bg-red-100 text-red-800"
     }
   ];
