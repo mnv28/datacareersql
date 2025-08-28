@@ -36,18 +36,15 @@ function Nav() {
   const loginUrl = import.meta.env.VITE_LOGIN_URL;
 
   const scrollTo = (id) => {
-    // Try immediate scroll
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Fallback: try after a small delay
       setTimeout(() => {
         const delayedElement = document.getElementById(id);
         if (delayedElement) {
           delayedElement.scrollIntoView({ behavior: 'smooth' });
         } else {
-          // Final fallback: use hash navigation
           window.location.hash = id;
         }
       }, 100);
@@ -62,7 +59,6 @@ function Nav() {
         behavior: 'smooth' 
       });
     } catch (error) {
-      // Fallback for environments where smooth scroll might not work
       window.scrollTo(0, 0);
     }
     setIsOpen(false);
