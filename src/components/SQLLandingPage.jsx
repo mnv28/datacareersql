@@ -68,17 +68,48 @@ function Nav() {
   const loginUrl = import.meta.env.VITE_LOGIN_URL;
 
   const scrollTo = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    try {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } else {
+        // Fallback: scroll to top if element not found
+        window.scrollTo({ 
+          top: 0, 
+          behavior: 'smooth' 
+        });
+      }
       setIsOpen(false);
-    } else {
-      console.error(`Element not found with ID: ${id}`);
+    } catch (error) {
+      // Fallback for environments where smooth scroll might not work
+      try {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        } else {
+          window.scrollTo(0, 0);
+        }
+      } catch (fallbackError) {
+        // Final fallback
+        window.scrollTo(0, 0);
+      }
+      setIsOpen(false);
     }
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
+    } catch (error) {
+      // Fallback for environments where smooth scroll might not work
+      window.scrollTo(0, 0);
+    }
     setIsOpen(false);
   };
 
@@ -92,16 +123,12 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link
-          to="/" 
-          className="flex items-center"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
+        <button
+          onClick={scrollToTop}
+          className="flex items-center hover:opacity-80 transition-opacity"
         >
           <img src={DataCareerLogo} alt="DataCareer" className="h-8 w-auto" />
-        </Link>
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-gray-700">
@@ -121,7 +148,7 @@ function Nav() {
           <Link to={loginUrl} className="px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
             Explore
           </Link>
-          <Link to={registrationUrl} className="px-4 py-2 text-sm text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition">
+          <Link to={registrationUrl} className="px-6 py-2 text-sm text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition">
             Start Free
           </Link>
         </div>
