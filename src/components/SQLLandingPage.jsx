@@ -13,20 +13,29 @@ function SQLLandingPage() {
     // Force scroll to top on component mount (helps with production builds)
     const forceScrollToTop = () => {
       try {
-        // Try multiple methods to ensure it works in all environments
-        if (window.scrollTo) {
-          window.scrollTo(0, 0);
-        } else if (document.documentElement && document.documentElement.scrollTop !== undefined) {
-          document.documentElement.scrollTop = 0;
-        } else if (document.body && document.body.scrollTop !== undefined) {
-          document.body.scrollTop = 0;
-        }
+        // Use smooth scrolling instead of instant scrolling
+        window.scrollTo({ 
+          top: 0, 
+          left: 0,
+          behavior: 'smooth'
+        });
       } catch (error) {
-        console.warn('Scroll to top failed:', error);
+        // Fallback to instant scroll if smooth scroll fails
+        try {
+          if (window.scrollTo) {
+            window.scrollTo(0, 0);
+          } else if (document.documentElement && document.documentElement.scrollTop !== undefined) {
+            document.documentElement.scrollTop = 0;
+          } else if (document.body && document.body.scrollTop !== undefined) {
+            document.body.scrollTop = 0;
+          }
+        } catch (fallbackError) {
+          console.warn('Scroll to top failed:', fallbackError);
+        }
       }
     };
 
-    // Execute immediately
+    // Execute immediately with smooth scroll
     forceScrollToTop();
 
     // Also try after a small delay to handle any rendering delays
