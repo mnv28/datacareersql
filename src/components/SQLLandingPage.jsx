@@ -53,13 +53,39 @@ function Nav() {
   };
 
   const scrollToTop = () => {
+    // Multiple fallback methods for different environments
     try {
+      // Method 1: Try smooth scroll
       window.scrollTo({ 
         top: 0, 
+        left: 0,
         behavior: 'smooth' 
       });
     } catch (error) {
-      window.scrollTo(0, 0);
+      try {
+        // Method 2: Try instant scroll
+        window.scrollTo(0, 0);
+      } catch (error2) {
+        try {
+          // Method 3: Try scrollIntoView on body
+          document.body.scrollIntoView({ behavior: 'smooth' });
+        } catch (error3) {
+          try {
+            // Method 4: Try scrollIntoView on html
+            document.documentElement.scrollIntoView({ behavior: 'smooth' });
+          } catch (error4) {
+            // Method 5: Final fallback - use jQuery-like approach
+            if (document.documentElement && document.documentElement.scrollTop !== undefined) {
+              document.documentElement.scrollTop = 0;
+            } else if (document.body && document.body.scrollTop !== undefined) {
+              document.body.scrollTop = 0;
+            } else {
+              // Method 6: Use window.scroll
+              window.scroll(0, 0);
+            }
+          }
+        }
+      }
     }
     setIsOpen(false);
   };
@@ -482,6 +508,34 @@ function Footer() {
 
 
 function SQLLandingPage() {
+  // Handle scroll to top on page load for production environments
+  useEffect(() => {
+    // Force scroll to top on component mount (helps with production builds)
+    const forceScrollToTop = () => {
+      try {
+        // Try multiple methods to ensure it works in all environments
+        if (window.scrollTo) {
+          window.scrollTo(0, 0);
+        } else if (document.documentElement && document.documentElement.scrollTop !== undefined) {
+          document.documentElement.scrollTop = 0;
+        } else if (document.body && document.body.scrollTop !== undefined) {
+          document.body.scrollTop = 0;
+        }
+      } catch (error) {
+        console.warn('Scroll to top failed:', error);
+      }
+    };
+
+    // Execute immediately
+    forceScrollToTop();
+
+    // Also try after a small delay to handle any rendering delays
+    const timer = setTimeout(forceScrollToTop, 100);
+
+    // Cleanup
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Nav />
