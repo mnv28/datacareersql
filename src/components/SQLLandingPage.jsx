@@ -77,9 +77,15 @@ function Nav() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsOpen(false);
+  };
+
   const navItems = [
     { label: "Why SQL?", id: "why-sql" },
-    { label: "Simulations", id: "simulations" },
+    { label: "Interview Questions", id: "simulations" },
+    { label: "Simulations", id: "domains" },
     { label: "How it works", id: "how-it-works" }
   ];
 
@@ -91,26 +97,22 @@ function Nav() {
           className="flex items-center"
           onClick={(e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            scrollToTop();
           }}
         >
           <img src={DataCareerLogo} alt="DataCareer" className="h-8 w-auto" />
-          </Link>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-gray-700">
           {navItems.map((item) => (
-            <Link
+            <button
               key={item.id}
-                to={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo(item.id);
-              }}
+              onClick={() => scrollTo(item.id)}
               className="text-sm hover:text-blue-600 transition-colors cursor-pointer"
             >
               {item.label}
-            </Link>
+            </button>
           ))}
         </nav>
 
@@ -141,20 +143,16 @@ function Nav() {
         <div className="md:hidden bg-white border-t border-gray-200 min-h-screen">
           <div className="px-4 py-4 space-y-4">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.id}
-                to={`#${item.id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo(item.id);
-                }}
+                onClick={() => scrollTo(item.id)}
                 className="block w-full text-left text-sm text-gray-700 py-2 hover:text-blue-600"
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
             <div className="pt-4 space-y-3">
-                <Link to={loginUrl} className="block w-full text-center px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg">
+              <Link to={loginUrl} className="block w-full text-center px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg">
                 Explore Challenges
               </Link>
               <Link to={registrationUrl} className="block w-full text-center px-4 py-2 text-sm text-white bg-orange-500 rounded-lg">
