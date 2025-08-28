@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Section from "./Section";
 import { REGISTRATION_URL } from "../api";
-function HowItWorks() {
+  function HowItWorks() {
   const steps = [
     { title: "Choose a Scenario", desc: "Pick from real-world business problems" },
     { title: "Write Queries", desc: "Solve challenges with SQL" },
@@ -10,7 +10,7 @@ function HowItWorks() {
   ];
 
   return (
-    <Section id="how-it-works" className="bg-gray-50">
+    <Section id="how-it-works" className="bg-white">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           How It Works
@@ -19,7 +19,7 @@ function HowItWorks() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {steps.map((step, index) => (
-          <div key={index} className="text-center p-6 bg-white rounded-lg">
+            <div key={index} className="text-center p-6 bg-gray-100 rounded-lg">
             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-lg font-bold mb-4 mx-auto">
               {index + 1}
             </div>
