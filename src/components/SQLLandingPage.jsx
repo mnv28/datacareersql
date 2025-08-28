@@ -68,36 +68,23 @@ function Nav() {
   const loginUrl = import.meta.env.VITE_LOGIN_URL;
 
   const scrollTo = (id) => {
-    try {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      } else {
-        // Fallback: scroll to top if element not found
-        window.scrollTo({ 
-          top: 0, 
-          behavior: 'smooth' 
-        });
-      }
-      setIsOpen(false);
-    } catch (error) {
-      // Fallback for environments where smooth scroll might not work
-      try {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView();
+    // Try immediate scroll
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback: try after a small delay
+      setTimeout(() => {
+        const delayedElement = document.getElementById(id);
+        if (delayedElement) {
+          delayedElement.scrollIntoView({ behavior: 'smooth' });
         } else {
-          window.scrollTo(0, 0);
+          // Final fallback: use hash navigation
+          window.location.hash = id;
         }
-      } catch (fallbackError) {
-        // Final fallback
-        window.scrollTo(0, 0);
-      }
-      setIsOpen(false);
+      }, 100);
     }
+    setIsOpen(false);
   };
 
   const scrollToTop = () => {
