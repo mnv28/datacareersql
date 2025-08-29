@@ -43,8 +43,8 @@ function SQLLandingPage() {
       <Nav />
       <main>
         <Hero />
-        <WhySQL />
         <InterviewQuestions />
+        <WhySQL />
         <Domains />
         <HowItWorks />
       </main>

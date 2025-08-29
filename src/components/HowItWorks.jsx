@@ -10,7 +10,7 @@ import { REGISTRATION_URL } from "../api";
   ];
 
   return (
-    <Section id="how-it-works" className="bg-white">
+    <Section id="how-it-works" className="bg-gray-50">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           How It Works

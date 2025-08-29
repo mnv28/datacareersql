@@ -20,7 +20,7 @@ function Domains() {
   ];
 
   return (
-    <Section id="domains" className="bg-gray-50">
+    <Section id="domains" className="bg-white">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           Real-World Challenges

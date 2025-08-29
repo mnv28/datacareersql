@@ -4,9 +4,17 @@ import BHPLogo from "../assets/BHP Group.png";
 import TelstraLogo from "../assets/Telstra.png";
 import WoolworthsLogo from "../assets/Woolworths.png";
 import CommBankLogo from "../assets/CommBank.png";
+import { LOGIN_URL } from "../api";
 
 function InterviewQuestions() {
+  const handleQuestionClick = () => {
+    if (LOGIN_URL) {
+      window.location.href = LOGIN_URL;
+    }
+  };
+
   const questions = [
+    // Beginner Level Questions
     {
       company: "Woolworths",
       logo: WoolworthsLogo,
@@ -22,13 +30,6 @@ function InterviewQuestions() {
       difficultyColor: "bg-green-100 text-green-800"
     },
     {
-      company: "Woolworths",
-      logo: WoolworthsLogo,
-      title: "Loyalty Trends Over Time",
-      difficulty: "Advanced",
-      difficultyColor: "bg-red-100 text-red-800"
-    },
-    {
       company: "CommBank",
       logo: CommBankLogo,
       title: "Weekend vs Weekday Spending Patterns",
@@ -36,11 +37,50 @@ function InterviewQuestions() {
       difficultyColor: "bg-green-100 text-green-800"
     },
     {
+      company: "Telstra",
+      logo: TelstraLogo,
+      title: "High-Traffic Network Asset",
+      difficulty: "Beginner",
+      difficultyColor: "bg-green-100 text-green-800"
+    },
+    {
+      company: "BHP Group",
+      logo: BHPLogo,
+      title: "High-Compliance Mining Workforce",
+      difficulty: "Beginner",
+      difficultyColor: "bg-green-100 text-green-800"
+    },
+    
+    // Intermediate Level Questions
+    {
       company: "CommBank",
       logo: CommBankLogo,
       title: "Age-based Financial Behaviour",
       difficulty: "Intermediate",
       difficultyColor: "bg-yellow-100 text-yellow-800"
+    },
+    {
+      company: "Telstra",
+      logo: TelstraLogo,
+      title: "Highly Congested Network Assets",
+      difficulty: "Intermediate",
+      difficultyColor: "bg-yellow-100 text-yellow-800"
+    },
+    {
+      company: "BHP Group",
+      logo: BHPLogo,
+      title: "Top Performing Employees",
+      difficulty: "Intermediate",
+      difficultyColor: "bg-yellow-100 text-yellow-800"
+    },
+    
+    // Advanced Level Questions
+    {
+      company: "Woolworths",
+      logo: WoolworthsLogo,
+      title: "Loyalty Trends Over Time",
+      difficulty: "Advanced",
+      difficultyColor: "bg-red-100 text-red-800"
     },
     {
       company: "CommBank",
@@ -52,37 +92,9 @@ function InterviewQuestions() {
     {
       company: "Telstra",
       logo: TelstraLogo,
-      title: "High-Traffic Network Asset",
-      difficulty: "Beginner",
-      difficultyColor: "bg-green-100 text-green-800"
-    },
-    {
-      company: "Telstra",
-      logo: TelstraLogo,
-      title: "Highly Congested Network Assets",
-      difficulty: "Intermediate",
-      difficultyColor: "bg-yellow-100 text-yellow-800"
-    },
-    {
-      company: "Telstra",
-      logo: TelstraLogo,
       title: "Latency vs Packet Loss Correlation",
       difficulty: "Advanced",
       difficultyColor: "bg-red-100 text-red-800"
-    },
-    {
-      company: "BHP Group",
-      logo: BHPLogo,
-      title: "High-Compliance Mining Workforce",
-      difficulty: "Beginner",
-      difficultyColor: "bg-green-100 text-green-800"
-    },
-    {
-      company: "BHP Group",
-      logo: BHPLogo,
-      title: "Top Performing Employees",
-      difficulty: "Intermediate",
-      difficultyColor: "bg-yellow-100 text-yellow-800"
     },
     {
       company: "BHP Group",
@@ -97,13 +109,13 @@ function InterviewQuestions() {
     <Section id="simulations" className="bg-white">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Ace the SQL & Data Science Interview
+        Your Path to SQL & Data Science Success
         </h2>
         <p className="text-lg text-gray-600 mb-2">
-          Practice SQL Interview and Data Science Interview questions on DataCareer.
+        Explore curated SQL and Data Science interview challenges, designed to help you land your dream role.
         </p>
         <p className="text-sm text-gray-500">
-          Made by DataCareer Team, Best-Selling Author of Ace the Data Science Interview.
+        From the creators of DataCareer, leaders in Data Science career preparation.
         </p>
       </div>
       
@@ -128,6 +140,7 @@ function InterviewQuestions() {
               <tr 
                 key={index} 
                 className="hover:bg-gray-50 transition-colors cursor-pointer"
+                onClick={handleQuestionClick}
               >
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
@@ -163,6 +176,7 @@ function InterviewQuestions() {
           <div 
             key={index}
             className="bg-white rounded-lg shadow-md p-4 border border-gray-200 cursor-pointer hover:shadow-lg transition-shadow" 
+            onClick={handleQuestionClick}
           >
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center">
