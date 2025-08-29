@@ -42,10 +42,10 @@ function SQLLandingPage() {
     <div className="min-h-screen bg-white">
       <Nav />
       <main>
-        <Hero />
         <InterviewQuestions />
         <WhySQL />
         <Domains />
+        <Hero />  
         <HowItWorks />
       </main>
       <Footer />

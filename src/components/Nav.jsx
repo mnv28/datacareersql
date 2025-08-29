@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DataCareerLogo from "../assets/DataCareerLogo.png";
 import { REGISTRATION_URL, LOGIN_URL } from "../api";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollTo = (id) => {
     const element = document.getElementById(id);
@@ -20,6 +21,11 @@ function Nav() {
         }
       }, 100);
     }
+    setIsOpen(false);
+  };
+
+  const navigateToHome = () => {
+    navigate('/');
     setIsOpen(false);
   };
 
@@ -72,8 +78,8 @@ function Nav() {
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <button
-          onClick={scrollToTop}
-          className="flex items-center hover:opacity-80 transition-opacity"
+          onClick={navigateToHome}
+          className="flex items-center hover:opacity-80 transition-opacity cursor-pointer"
         >
           <img src={DataCareerLogo} alt="DataCareer" className="h-8 w-auto" />
         </button>

@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Section from "./Section";
-import { REGISTRATION_URL } from "../api";
+
   function HowItWorks() {
   const steps = [
     { title: "Choose a Scenario", desc: "Pick from real-world business problems" },
@@ -10,7 +9,7 @@ import { REGISTRATION_URL } from "../api";
   ];
 
   return (
-    <Section id="how-it-works" className="bg-gray-50">
+    <Section id="how-it-works" className="bg-white">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           How It Works
@@ -27,11 +26,6 @@ import { REGISTRATION_URL } from "../api";
             <p className="text-gray-600 text-sm">{step.desc}</p>
           </div>
         ))}
-      </div>
-      <div className="text-center">
-              <Link to={REGISTRATION_URL} className="inline-block px-8 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
-          Start Learning
-        </Link>  
       </div>
     </Section>
   );
