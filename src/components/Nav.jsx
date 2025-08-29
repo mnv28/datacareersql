@@ -68,8 +68,8 @@ function Nav() {
   };
 
   const navItems = [
+    { label: "Interview Questions", id: "simulations" },  
     { label: "Why SQL?", id: "why-sql" },
-    { label: "Interview Questions", id: "simulations" },
     { label: "Simulations", id: "domains" },
     { label: "How it works", id: "how-it-works" }
   ];
