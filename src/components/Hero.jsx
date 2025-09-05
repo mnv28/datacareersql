@@ -31,7 +31,7 @@ function Hero() {
             onClick={scrollToSimulations}
             className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white/10 transition"
           >
-            View Challengess
+            View Challenges
           </button>
         </div>
       </Section>
