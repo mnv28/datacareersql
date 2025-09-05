@@ -99,7 +99,7 @@ function Nav() {
         {/* Desktop CTA - Only on large screens (lg: and above) */}
         <div className="hidden lg:flex items-center gap-3">
           <Link to={LOGIN_URL} className="px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition">
-            Sign In
+            SIGN IN
           </Link>
           <Link to={REGISTRATION_URL} className="px-6 py-2 text-sm text-white bg-[#e9724c] rounded-lg hover:bg-[#c45e41] transition">
             Start Free
@@ -133,7 +133,7 @@ function Nav() {
             ))}
             <div className="pt-4 space-y-3">
               <Link to={LOGIN_URL} className="block w-full text-center px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg">
-                Sign In
+                SIGN IN
               </Link>
               <Link to={REGISTRATION_URL} className="block w-full text-center px-4 py-2 text-sm text-white bg-[#e9724c] rounded-lg hover:bg-[#c45e41] transition">
                 Start Free
