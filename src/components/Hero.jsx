@@ -24,7 +24,7 @@ function Hero() {
           Learn SQL through real-world simulations and stand out in the job market.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to={REGISTRATION_URL} className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
+          <Link to={REGISTRATION_URL} className="px-6 py-3 bg-[#091540] text-white rounded-lg hover:bg-[#02092A] transition">
             Start Learning Free
           </Link>
           <button 
