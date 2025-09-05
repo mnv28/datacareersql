@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Nav from "./Nav";
 import Hero from "./Hero";
-import WhySQL from "./WhySQL";
 import InterviewQuestions from "./InterviewQuestions";
 import Domains from "./Domains";
 import HowItWorks from "./HowItWorks";
@@ -43,7 +42,7 @@ function SQLLandingPage() {
       <Nav />
       <main>
         <InterviewQuestions />
-        <WhySQL />
+        {/* <WhySQL /> */}
         <Domains />
         <Hero />  
         <HowItWorks />
